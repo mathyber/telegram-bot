@@ -12,9 +12,13 @@ module.exports = {
     commands: [
         '/me - Посмотреть информацию о себе',
         '/premium - Получить премиум статус',
+        '/webapp - Открыть Web-приложение',
         '/help - Все команды'
     ],
     adminCommands: [
         '/users - Список пользователей'
     ],
+    webapp: {
+        url: 'https://my-telegram-webapp.example.com'
+    }
 };

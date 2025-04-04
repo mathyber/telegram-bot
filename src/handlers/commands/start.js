@@ -11,7 +11,15 @@ module.exports = async (ctx) => {
         { source: img },
         {
             caption: 'Добро пожаловать!\n' +
-                commandsText()
+                commandsText(),
+            reply_markup: {
+                inline_keyboard: [
+                    [{
+                        text: 'Открыть Web App',
+                        web_app: { url: 'https://my-telegram-webapp.example.com' }
+                    }]
+                ]
+            }
         }
     );
 };
