@@ -52,6 +52,10 @@ class User {
         if (!user || !user.premiumUntil) return false;
         return new Date(user.premiumUntil) > new Date();
     }
+
+    static async get(sql, params = []) {
+        return await db.get(sql, params);
+    }
 }
 
 module.exports = User;
