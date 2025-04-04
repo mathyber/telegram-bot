@@ -1,5 +1,6 @@
 const userService = require('../../services/userService');
 const path = require("path");
+const {commandsText} = require("../../utils/helpers");
 const img = path.join(__dirname, '../../files/1.jpg');
 
 module.exports = async (ctx) => {
@@ -9,8 +10,8 @@ module.exports = async (ctx) => {
     await ctx.replyWithPhoto(
         { source: img },
         {
-            caption: 'Добро пожаловать! Вы зарегистрированы.\n' +
-                'Используйте /help для списка команд.'
+            caption: 'Добро пожаловать!\n' +
+                commandsText()
         }
     );
 };

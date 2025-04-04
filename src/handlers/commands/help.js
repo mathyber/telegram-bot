@@ -1,9 +1,6 @@
-const {commands, adminCommands} = require("../../config/config");
+const {commandsText} = require("../../utils/helpers");
 module.exports = async (ctx) => {
     await ctx.reply(
-        'Доступные команды:\n\n' +
-        commands.join('\n') +
-        '\n\nДля администратора:\n' +
-        adminCommands.join('\n')
+        commandsText()
     );
 };

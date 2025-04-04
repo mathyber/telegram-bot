@@ -1,4 +1,4 @@
-const { pagination } = require('../config/config');
+const { pagination, commands, adminCommands} = require('../config/config');
 
 module.exports = {
     formatUserList: (users, page, total) => {
@@ -13,5 +13,9 @@ module.exports = {
         });
         text += `\nСтраница ${page}`;
         return text;
-    }
+    },
+    commandsText: () => 'Доступные команды:\n\n' +
+        commands.join('\n') +
+        '\n\nДля администратора:\n' +
+        adminCommands.join('\n')
 };
